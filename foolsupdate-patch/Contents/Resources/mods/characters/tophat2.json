@@ -1,0 +1,92 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "SIDEVIEW POSES/TOPHAT/idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				64,
+				34
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "SIDEVIEW POSES/TOPHAT/left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				2,
+				-17
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "SIDEVIEW POSES/TOPHAT/down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				25
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "SIDEVIEW POSES/TOPHAT/up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-37,
+				9
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "SIDEVIEW POSES/TOPHAT/right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				4,
+				9
+			],
+			"anim": "miss",
+			"fps": 24,
+			"name": "SIDEVIEW POSES/TOPHAT/miss",
+			"indices": []
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/underway/tophat2",
+	"position": [
+		-660,
+		375
+	],
+	"healthicon": "thnsp",
+	"vslice_sustains": true,
+	"flip_x": true,
+	"healthbar_colors": [
+		51,
+		51,
+		51
+	],
+	"camera_position": [
+		-400,
+		200
+	],
+	"sing_duration": 4,
+	"scale": 1,
+	"_editor_isPlayer": true
+}

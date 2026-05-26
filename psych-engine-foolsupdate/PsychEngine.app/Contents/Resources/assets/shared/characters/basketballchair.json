@@ -1,0 +1,80 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "bbIDLE instance 1"
+		},
+		{
+			"offsets": [
+				-1,
+				-2
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "bbDOWN instance 1"
+		},
+		{
+			"offsets": [
+				9,
+				26
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "bbUP instance 1"
+		},
+		{
+			"offsets": [
+				37,
+				10
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "bbLEFT instance 1"
+		},
+		{
+			"offsets": [
+				-4,
+				1
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "bbRIGHT instance 1"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/dotted-line/bg1/bbw sitting assets",
+	"position": [
+		100,
+		80
+	],
+	"healthicon": "bb",
+	"flip_x": true,
+	"healthbar_colors": [
+		146,
+		70,
+		28
+	],
+	"camera_position": [
+		-100,
+		70
+	],
+	"sing_duration": 2.5,
+	"scale": 0.84,
+	"_editor_isPlayer": true
+}

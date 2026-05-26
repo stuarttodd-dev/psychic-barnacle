@@ -1,0 +1,9 @@
+{
+	"name": "VEE2",
+	"description": "A bonus VEE2 mod pack for foolsupdate with extra songs, weeks, stages, and characters.",
+	"restart": false,
+	"runsGlobally": false,
+	"color": [0, 220, 235],
+	"discordRPC": "863222024192262205",
+	"iconFramerate": 10
+}

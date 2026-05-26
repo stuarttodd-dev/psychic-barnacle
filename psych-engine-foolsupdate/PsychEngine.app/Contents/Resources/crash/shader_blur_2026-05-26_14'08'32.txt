@@ -1,0 +1,87 @@
+[openfl.display.Shader] ERROR: Error compiling fragment shader
+ERROR: 0:66: Initializer not allowed
+ERROR: 0:76: '*' does not operate on 'float' and 'int'
+ERROR: 0:81: Use of undeclared identifier 'alpha'
+
+#ifdef GL_ES
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
+precision mediump float;
+#endif
+#endif
+
+varying float openfl_Alphav;
+		varying vec4 openfl_ColorMultiplierv;
+		varying vec4 openfl_ColorOffsetv;
+		varying vec2 openfl_TextureCoordv;
+
+		uniform bool openfl_HasColorTransform;
+		uniform vec2 openfl_TextureSize;
+		uniform sampler2D bitmap;
+
+		uniform bool hasTransform;
+		uniform bool hasColorTransform;
+
+		vec4 flixel_texture2D(sampler2D bitmap, vec2 coord)
+		{
+			vec4 color = texture2D(bitmap, coord);
+
+			if (!hasTransform)
+			{
+				return color;
+			}
+
+			if (color.a == 0.0)
+			{
+				return vec4(0.0, 0.0, 0.0, 0.0);
+			}
+
+			if (!hasColorTransform)
+			{
+				return color * openfl_Alphav;
+			}
+
+			color = vec4(color.rgb / color.a, color.a);
+
+			mat4 colorMultiplier = mat4(0);
+			colorMultiplier[0][0] = openfl_ColorMultiplierv.x;
+			colorMultiplier[1][1] = openfl_ColorMultiplierv.y;
+			colorMultiplier[2][2] = openfl_ColorMultiplierv.z;
+			colorMultiplier[3][3] = openfl_ColorMultiplierv.w;
+
+			color = clamp(openfl_ColorOffsetv + (color * colorMultiplier), 0.0, 1.0);
+
+			if (color.a > 0.0)
+			{
+				return vec4(color.rgb * color.a * openfl_Alphav, color.a * openfl_Alphav);
+			}
+
+			return vec4(0.0, 0.0, 0.0, 0.0);
+		}
+
+// SHADER BY EXISTICAL ON SHADERTOY https://www.shadertoy.com/view/Xltfzj i only ported and edited it a bit
+
+vec2 uv = openfl_TextureCoordv.xy;
+float pi = 6.28318530718; // Pi * 2
+uniform float directions;
+uniform float quality;
+uniform float size;
+uniform float merge;
+uniform float alpha = 0.25;
+
+void main() {
+    vec2 radius = size / openfl_TextureSize.xy;
+	vec4 ocolor = texture2D(bitmap, uv);
+    vec4 color = texture2D(bitmap, uv);
+	
+    // Blur calculations
+    for (float d = 0.0; d < pi; d += pi / directions) {
+		for (float i = 1.0 / quality; i < 1.001; i += 1.0 / quality) {
+			color += texture2D(bitmap, uv + vec2(cos(d), sin(d) * 2) * radius * i);		
+        }
+    }
+    
+    color /= quality * directions + 1.0;
+    gl_FragColor = color * (alpha);
+}

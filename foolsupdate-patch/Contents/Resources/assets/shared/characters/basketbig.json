@@ -1,0 +1,91 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-88,
+				-101
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "bbIDLE instance 1"
+		},
+		{
+			"offsets": [
+				-83,
+				-103
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "bbDOWN instance 1"
+		},
+		{
+			"offsets": [
+				-80,
+				-68
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "bbUP instance 1"
+		},
+		{
+			"offsets": [
+				-24,
+				-93
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "bbLEFT instance 1"
+		},
+		{
+			"offsets": [
+				-85,
+				-88
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "bbRIGHT instance 1"
+		},
+		{
+			"offsets": [
+				-84,
+				-94
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "miss",
+			"indices": [],
+			"name": "bbMISS instance 1"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/dotted-line/bg2/vbbw assets",
+	"position": [
+		100,
+		80
+	],
+	"healthicon": "bb",
+	"flip_x": true,
+	"healthbar_colors": [
+		146,
+		70,
+		28
+	],
+	"camera_position": [
+		-100,
+		70
+	],
+	"sing_duration": 2.5,
+	"scale": 1.3,
+	"_editor_isPlayer": true
+}

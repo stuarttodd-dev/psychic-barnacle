@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="PTeam Bow.png" width="2069" height="164">
+	<SubTexture name="Bow Idle instance 10000" x="1634" y="1" width="217" height="162" frameX="-0" frameY="-0" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10001" x="1634" y="1" width="217" height="162" frameX="-0" frameY="-0" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10002" x="1851" y="1" width="217" height="162" frameX="-1" frameY="-0" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10003" x="1851" y="1" width="217" height="162" frameX="-1" frameY="-0" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10004" x="1218" y="1" width="214" height="160" frameX="-7" frameY="-2" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10005" x="1218" y="1" width="214" height="160" frameX="-7" frameY="-2" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10006" x="1" y="1" width="202" height="153" frameX="-29" frameY="-9" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10007" x="1" y="1" width="202" height="153" frameX="-29" frameY="-9" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10008" x="203" y="1" width="202" height="153" frameX="-32" frameY="-9" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10009" x="203" y="1" width="202" height="153" frameX="-32" frameY="-9" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10010" x="1432" y="1" width="202" height="160" frameX="-48" frameY="-2" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10011" x="1432" y="1" width="202" height="160" frameX="-48" frameY="-2" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10012" x="809" y="1" width="201" height="158" frameX="-47" frameY="-4" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10013" x="809" y="1" width="201" height="158" frameX="-47" frameY="-4" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10014" x="405" y="1" width="202" height="155" frameX="-41" frameY="-7" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10015" x="405" y="1" width="202" height="155" frameX="-41" frameY="-7" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10016" x="607" y="1" width="202" height="155" frameX="-26" frameY="-7" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10017" x="607" y="1" width="202" height="155" frameX="-26" frameY="-7" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10018" x="1010" y="1" width="208" height="158" frameX="-19" frameY="-4" frameWidth="250" frameHeight="163"/>
+	<SubTexture name="Bow Idle instance 10019" x="1010" y="1" width="208" height="158" frameX="-19" frameY="-4" frameWidth="250" frameHeight="163"/>
+</TextureAtlas>

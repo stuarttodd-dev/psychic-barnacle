@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="freeplaytokensnew_light.png" width="77" height="229">
+	<SubTexture name="gold token instance 10000" x="1" y="1" width="75" height="75" frameX="-0" frameY="-1" frameWidth="76" frameHeight="76"/>
+	<SubTexture name="no token instance 10000" x="1" y="77" width="75" height="75" frameX="-0" frameY="-1" frameWidth="75" frameHeight="76"/>
+	<SubTexture name="win token instance 10000" x="1" y="153" width="75" height="75" frameX="-0" frameY="-1" frameWidth="76" frameHeight="76"/>
+</TextureAtlas>
