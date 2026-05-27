@@ -9548,6 +9548,7 @@
 			]
 		],
 		"player3": null,
+		"gameOverChar": "dank4-dead",
 		"disableNoteRGB": true,
 		"song": "r(BFDIMemes",
 		"validScore": true,

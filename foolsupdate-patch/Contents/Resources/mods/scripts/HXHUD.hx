@@ -49,6 +49,10 @@ function onCreate ()
 
 function onUpdate() 
 {
+	// Splashes must stay on the HUD camera (strum coords); combo text can use camGame offsets.
+	game.grpNoteSplashes.cameras = [camHUD];
+	game.noteGroup.cameras = [camHUD];
+
 	if (PlayState.SONG.song.toLowerCase() != 'newfoundland') comboGroup.cameras = [camGame];
 
     for (i in 0...list.length)

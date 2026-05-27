@@ -12,37 +12,45 @@ removeLuaSprite('logos')
 end
 end
 
+function showStageCharacters()
+for _, char in ipairs({'boyfriendGroup', 'dadGroup', 'gfGroup', 'boyfriend', 'dad', 'gf'}) do
+setProperty(char .. '.visible', true)
+setProperty(char .. '.alpha', 1)
+end
+end
+
 function onCreate() 
-setProperty('camGame.bgColor', getColorFromHex('0000FF'))
+setProperty('camGame.bgColor', getColorFromHex('000000'))
 setProperty('textmiss.alpha',1)
 
 makeLuaSprite('rsky','backgrounds/bfdimemes/sky shit',-900,-775)
 setScrollFactor('rsky',0,0)
-addLuaSprite('rsky')
+addLuaSprite('rsky', false)
 
 makeLuaSprite('rsun','backgrounds/bfdimemes/reddisun',-535,-860)
 setScrollFactor('rsun',0.025,0.025)
-addLuaSprite('rsun')
+addLuaSprite('rsun', false)
 
 makeLuaSprite('bgblue','backgrounds/bfdimemes/the blue shit',-925,-450)
 setScrollFactor('bgblue',0.15,0.15)
-addLuaSprite('bgblue')
+addLuaSprite('bgblue', false)
 
 makeLuaSprite('bg1','backgrounds/bfdimemes/big red shit',-775,-435)
 setScrollFactor('bg1',0.25,0.25)
-addLuaSprite('bg1')
+addLuaSprite('bg1', false)
 
 makeLuaSprite('fgbg','backgrounds/bfdimemes/smaller red shit',-755,100)
 setScrollFactor('fgbg',0.4,0.4)
-addLuaSprite('fgbg')
+addLuaSprite('fgbg', false)
 
 makeLuaSprite('floor','backgrounds/bfdimemes/floor shit',0,0)
-addLuaSprite('floor')
+addLuaSprite('floor', false)
 
 createInstance('momo', 'objects.Character', {765, 297.5, 'Onemomo', false})
 addInstance('momo')
 scaleObject('momo',1.5,1.5)
 playAnim('momo','stage1')
+setObjectOrder('momo', getObjectOrder('boyfriendGroup') - 1)
 
 if not hideCards then
 makeLuaSprite('logos', 'rendersnlogos/MEMES CARD',0,0)
@@ -64,9 +72,39 @@ setObjectOrder('blacks',getObjectOrder('momo'))
 end
 
 function onCreatePost()
+-- addLuaSprite(name, false) in onCreate already inserts backgrounds before gfGroup (lowest
+-- character group), so they render behind all characters without any reordering needed.
+showStageCharacters()
+
 makeLuaSprite('foid','backgrounds/bfdimemes/madewithmemes',975,665)
-setObjectCamera('foid','camOTHER')
+setObjectCamera('foid','camOther')
 addLuaSprite('foid',true)
+
+-- Fix camera for the song's intended wide-angle two-character framing.
+setProperty('isCameraOnForcedPos', true)
+setProperty('camFollow.x', 1825)
+setProperty('camFollow.y', 450)
+setProperty('defaultCamZoom', 0.5)
+setProperty('camGame.zoom', 0.5)
+end
+
+function onGameOverStart()
+-- Hide live sprites; GameOverSubstate spawns dank4-dead from chart gameOverChar.
+setProperty('boyfriend.visible', false)
+setProperty('dad.visible', false)
+setProperty('gf.visible', false)
+
+for _, tag in ipairs({'rsky', 'rsun', 'bgblue', 'bg1', 'fgbg', 'floor', 'momo'}) do
+setProperty(tag .. '.visible', true)
+setProperty(tag .. '.alpha', 1)
+end
+setProperty('camGame.visible', true)
+setProperty('camGame.bgColor', getColorFromHex('000000'))
+setProperty('isCameraOnForcedPos', true)
+setProperty('camFollow.x', 1825)
+setProperty('camFollow.y', 450)
+setProperty('defaultCamZoom', 0.5)
+setProperty('camGame.zoom', 0.5)
 end
 
 local lastFocus = ''

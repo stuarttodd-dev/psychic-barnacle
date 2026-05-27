@@ -90,7 +90,9 @@ setProperty('bgw.visible',false)
 setProperty('artbg.visible',false)
 setProperty('static.visible',false)
 elseif tag == 'Trigger' and v1 == 'funny' then
-setProperty('boyfriendGroup.x',getProperty('boyfriendGroup.x')+200)
+-- Reduced from +200: camera follows BF and yellowface would go ~85px off the left edge.
+-- +90 keeps yellowface right at the screen edge instead of clipping off it.
+setProperty('boyfriendGroup.x',getProperty('boyfriendGroup.x')+90)
 setProperty('boyfriendGroup.y',getProperty('boyfriendGroup.y')-50)
 setProperty('bgw.alpha',1)
 elseif tag == 'Trigger' and v1 == 'andrew' then
@@ -110,4 +112,12 @@ end
 function doTweenScale(tag,obj,x,y,time,ease)
 doTweenX(tag..'x',obj..'.scale',x,time,ease)
 doTweenY(tag..'y',obj..'.scale',y,time,ease)
+end
+
+-- Stage script runs after the global HUD.lua, giving it the final say on icon positions.
+-- Locks the health icons to their HUD frame windows regardless of health value so they
+-- never clip outside the bars.png overlay cutouts.
+function onUpdatePost()
+setProperty('iconP1.x',860)
+setProperty('iconP2.x',250)
 end

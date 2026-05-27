@@ -1,0 +1,39 @@
+{
+	"animations": [
+		{
+			"offsets": [-24, 15],
+			"loop": false,
+			"fps": 24,
+			"anim": "firstDeath",
+			"indices": [],
+			"name": "dankMISS"
+		},
+		{
+			"offsets": [-24, 15],
+			"loop": true,
+			"fps": 24,
+			"anim": "deathLoop",
+			"indices": [],
+			"name": "dankMISS"
+		},
+		{
+			"offsets": [0, 0],
+			"loop": false,
+			"fps": 24,
+			"anim": "deathConfirm",
+			"indices": [],
+			"name": "dankIDLEREACT"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/bfdimemes/soulful four assets",
+	"position": [0, 0],
+	"healthicon": "soulful-four",
+	"vslice_sustains": true,
+	"flip_x": true,
+	"healthbar_colors": [38, 172, 255],
+	"camera_position": [-200, 200],
+	"sing_duration": 6,
+	"scale": 1
+}

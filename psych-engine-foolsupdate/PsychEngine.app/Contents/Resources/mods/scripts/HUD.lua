@@ -161,8 +161,8 @@ end
 end
 setProperty('redline.color',getColorFromHex('FF0000'))
 
-setProperty('comboGroup.scollFactor.x',0.95)
-setProperty('comboGroup.scollFactor.y',0.95)
+setProperty('comboGroup.scrollFactor.x',0.95)
+setProperty('comboGroup.scrollFactor.y',0.95)
 
 setProperty('timeBar.visible',false)
 setTextFont('botplayTxt',font)
