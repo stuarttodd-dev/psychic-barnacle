@@ -2,16 +2,14 @@ function onCreate()
 setProperty('textmiss.alpha',1)
 setProperty('bars.alpha',1)
 
--- BG art is 1543x878; horizon (sky→ground) is at pixel y=447 (51% from top).
--- Scroll 1,1 (world-space) + camera forced to y=840 in onCreatePost puts the
--- viewport at world y=480–1200 so the full BG is covered and the horizon lands
--- at ~51% of the screen with characters visible above it.
-makeLuaSprite('p1','backgrounds/kms/BG',0,400)
-setScrollFactor('p1', 1, 1)
+-- BG 1543x878, horizon at y=447 from sprite top. Screen-fixed so letterbox window stays framed.
+-- y=-400: large upward shift so grass/horizon fill the letterbox window (not low in frame).
+makeLuaSprite('p1','backgrounds/kms/BG',-132,-400)
+setScrollFactor('p1', 0, 0)
 scaleObject('p1', 1, 1)
 addLuaSprite('p1', false)
 setProperty('p1.alpha', 1)
-setProperty('camGame.bgColor', getColorFromHex('000000'))
+setProperty('camGame.bgColor', getColorFromHex('6EC5E8'))
 if not hideCards then
 makeLuaSprite('p', 'rendersnlogos/popcorn render',1500,50)
 setProperty('p.alpha',0)
@@ -26,7 +24,7 @@ setObjectCamera('logos','camHUD')
 addLuaSprite('logos',true)
 end
 
-makeAnimatedLuaSprite('puss', 'backgrounds/kms/thisguyfuckingrocks',-5,840)
+makeAnimatedLuaSprite('puss', 'backgrounds/kms/thisguyfuckingrocks',-5,680)
 addAnimationByPrefix('puss', 'stupid', 'nutty stroll instance',24,true)
 scaleObject('puss',1.75,1.75)
 addLuaSprite('puss',true)
@@ -34,12 +32,14 @@ end
 
 function onCreatePost()
 setObjectOrder('dadGroup',getObjectOrder('puss')-1)
--- camera_speed=0 keeps followLerp=0 (camera never follows characters).
--- Force the camera to world y=840 so the BG viewport is y=480–1200,
--- covering the full image with the sky/ground horizon at ~51% of screen.
-setProperty('camFollow.x', 640)
-setProperty('camFollow.y', 840)
+setProperty('bar1.alpha', 0)
+setProperty('bar2.alpha', 0)
 setProperty('isCameraOnForcedPos', true)
+setProperty('camFollow.x', 640)
+setProperty('camFollow.y', 780)
+setProperty('defaultCamZoom', 1)
+setProperty('camGame.zoom', 1)
+runHaxeCode('FlxG.camera.snapToTarget();')
 end
 
 function onEvent(name,v1)
@@ -57,12 +57,21 @@ elseif name == 'Trigger' and v1 == 'nutstop' then
 addAnimationByPrefix('puss', 'stop', 'nutty stop instance',24,false)
 end
 end
+
 function onUpdatePost()
+setProperty('bar1.alpha', 0)
+setProperty('bar2.alpha', 0)
+
 setProperty('iconP1.x',250)
 setProperty('iconP2.x',850)
 setProperty('iconP2.flipX',true)
 setProperty('iconP1.flipX',true)
 setProperty('healthBar.flipX',true)
+
+if getProperty('isCameraOnForcedPos') then
+setProperty('camFollow.x', 640)
+setProperty('camFollow.y', 780)
+end
 
 if getProperty('puss.animation.curAnim.finished') and getProperty("puss.animation.curAnim.name") == 'stop' then
 addAnimationByPrefix('puss', 'turn', 'nutty turn instance',24,false)

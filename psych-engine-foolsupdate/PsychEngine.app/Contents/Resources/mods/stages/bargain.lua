@@ -113,11 +113,3 @@ function doTweenScale(tag,obj,x,y,time,ease)
 doTweenX(tag..'x',obj..'.scale',x,time,ease)
 doTweenY(tag..'y',obj..'.scale',y,time,ease)
 end
-
--- Stage script runs after the global HUD.lua, giving it the final say on icon positions.
--- Locks the health icons to their HUD frame windows regardless of health value so they
--- never clip outside the bars.png overlay cutouts.
-function onUpdatePost()
-setProperty('iconP1.x',860)
-setProperty('iconP2.x',250)
-end
